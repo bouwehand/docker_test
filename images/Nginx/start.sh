@@ -1,2 +1,2 @@
-#!/user/bn/env bash
+#!/usr/bin/env bash
 service nginx start
