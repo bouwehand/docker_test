@@ -1,22 +1,20 @@
-FROM debian:jessie
+FROM phusion/baseimage
+MAINTAINER bouwehand <b.j.ouwehand@gmail.com>
 
-MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
+CMD ["/sbin/my_init"]
 
-RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
-RUN echo "deb http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list
+RUN apt-get update && apt-get install -y python-software-properties
+RUN add-apt-repository ppa:nginx/stable
+RUN apt-get update && apt-get install -y nginx
 
-ENV NGINX_VERSION 1.9.9-1~jessie
-
-RUN apt-get update && \
-    apt-get install -y ca-certificates nginx=${NGINX_VERSION} && \
-    rm -rf /var/lib/apt/lists/*
-
-# forward request and error logs to docker log collector
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
-VOLUME ["/var/cache/nginx"]
+RUN mkdir -p /etc/service/nginx
+ADD start.sh /etc/service/nginx/run
+RUN chmod +x /etc/service/nginx/run
 
-EXPOSE 80 443
+EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
