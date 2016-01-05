@@ -1,0 +1,14 @@
+web:
+  image: tutorial/nginx
+  ports:
+    - "80:80"
+  volumes:
+    - ./src:/var/www
+    - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+  links:
+    - php
+php:
+   image: nmcteam/php56
+   volumes:
+     - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
+     - ./src:/var/www
