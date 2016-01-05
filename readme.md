@@ -1,8 +1,9 @@
-
-#NOTE
+#virtualbox
 
 Docker will only run on an ubuntu 64bit install! 
 
+i used a set harddisk of 50mb 
+64bit image 14.04
 
 #Documentation
 http://www.newmediacampaigns.com/blog/docker-for-php-developers
