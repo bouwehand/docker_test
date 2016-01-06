@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 /**
  * Created by PhpStorm.
  * User: bouwehand
@@ -10,3 +12,5 @@ $pdo = new \PDO(
     'demoUser',
     'demoPass'
 );
+
+die(var_dump($pdo));
