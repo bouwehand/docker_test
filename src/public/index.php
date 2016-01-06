@@ -5,4 +5,8 @@
  * Date: 5-1-2016
  * Time: 16:59
  */
-phpinfo();
+$pdo = new \PDO(
+    'mysql:host=db;dbname=demoName',
+    'demoUser',
+    'demoPass'
+);
