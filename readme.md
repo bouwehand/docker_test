@@ -26,6 +26,18 @@ host  guest
 
 virtual machine will be reachable through localhost:8080
 
+###docker 
+
+follow the normal install
+
+Set the default dns for docker to 8.8.8.8
+
+`sudo vim /etc/default/docker`
+
+and than add to the /etc/hosts:
+
+`docker.dev 8.8.8.8`
+
 ##Documentation
 
 standard installation and setup

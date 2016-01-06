@@ -1,5 +1,6 @@
 web:
   image: tutorial/nginx
+  dns: 8.8.8.8
   ports:
     - "8080:80"
   volumes:
