@@ -1,11 +1,32 @@
-#virtualbox
+#Docker Test Project
+
+Setting up docker on a windows machine, because my mac is late
+
+##specs
+- windows 10
+- docker 1.9.1
+
+##installation
+
+###virtualbox
+
+Because i work on windows, docker gives problems. We will be running docker on a virtual machine ubuntu
 
 Docker will only run on an ubuntu 64bit install! 
 
 i used a set harddisk of 50mb 
 64bit image 14.04
 
-#Documentation
+###windows port forwarding
+
+Set the virtual machine networking to nat with portforwarding: 
+
+host  guest 
+8080  80
+
+virtual machine will be reachable through localhost:8080
+
+##Documentation
 
 standard installation and setup
 http://www.newmediacampaigns.com/blog/docker-for-php-developers
