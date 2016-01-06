@@ -20,5 +20,5 @@ db:
    - /var/lib/mysql
   environment:
    - DB_NAME=demoDb
-   - DB_USER=demoUser
+   - DB_USER=root
    - DB_PASS=demoPass

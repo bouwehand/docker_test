@@ -7,10 +7,15 @@ ini_set('display_errors', '1');
  * Date: 5-1-2016
  * Time: 16:59
  */
-$pdo = new \PDO(
-    'mysql:host=db;dbname=demoName',
-    'demoUser',
-    'demoPass'
-);
+try {
+    $pdo = new \PDO(
+        'mysql:host=db;dbname=demoName',
+        'root',
+        'demoPass'
+    );
+} catch(Exception $e) {
+    echo $e->getMessage();
+}
+
 
 die(var_dump($pdo));
