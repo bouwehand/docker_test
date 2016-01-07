@@ -8,6 +8,10 @@ Setting up docker on a windows machine, because my mac is late
 
 ##installation
 
+to run the tutum container, run the run.sh file
+
+expose to outside: 
+`docker attach --sig-proxy=false <container id>`
 
 ###virtualbox
 
@@ -31,15 +35,15 @@ virtual machine will be reachable through localhost:8080
 
 follow the normal install
 
-Set the default dns for docker to 8.8.8.8
-
-`sudo vim /etc/default/docker`
-
 and than add to the /etc/hosts:
 
-`docker.dev 8.8.8.8`
+`docker.dev 0.0.0.0`
 
 ##Documentation
+
+running apache hosts: 
+http://slopjong.de/2014/09/17/install-and-run-a-web-server-in-a-docker-container/
+
 
 standard installation and setup
 http://www.newmediacampaigns.com/blog/docker-for-php-developers
