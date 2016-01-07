@@ -8,6 +8,7 @@ Setting up docker on a windows machine, because my mac is late
 
 ##installation
 
+
 ###virtualbox
 
 Because i work on windows, docker gives problems. We will be running docker on a virtual machine ubuntu
